@@ -7,7 +7,7 @@
 # Build generated sources:
 # docker run --rm -v $(pwd):/app/libadalang libadalang:latest python ada/manage.py build
 
-FROM debian:stable-slim
+FROM debian:buster-slim
 
 WORKDIR /app/tooling
 
@@ -15,7 +15,7 @@ ENV QUEX_PATH /app/tooling/quex-0.65.4
 ENV PYTHONPATH "$PYTHONPATH:/app/tooling/langkit"
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends --assume-yes git gprbuild libgnatcoll-iconv1.7-dev
+    apt-get install --no-install-recommends --assume-yes git gprbuild libgnatcoll-iconv16.1.0-dev
 
 # Install Python and Pip for libadalang REQUIREMENTS
 RUN apt-get install --no-install-recommends --assume-yes ca-certificates build-essential python-dev python-setuptools
