@@ -1,3 +1,12 @@
+# Build this container like this:
+# docker build -t libadalang .
+
+# Generating sources for libadalang
+# docker run --rm -v $(pwd):/app/libadalang libadalang:latest python ada/manage.py generate
+
+# Build generated sources:
+# docker run --rm -v $(pwd):/app/libadalang libadalang:latest python ada/manage.py build
+
 FROM debian:stable-slim
 
 WORKDIR /app/tooling
@@ -26,7 +35,4 @@ ADD https://10gbps-io.dl.sourceforge.net/project/quex/HISTORY/0.65/quex-0.65.4.t
 RUN tar -xvf $QUEX_PATH
 RUN ln -s ${QUEX_PATH}/quex-exe.py /usr/local/bin/quex
 
-WORKDIR /app
-
-# build this and run as followed:
-# docker run --rm -v $project_path:/app <container-name> python /ada/manage.py
+WORKDIR /app/libadalang
