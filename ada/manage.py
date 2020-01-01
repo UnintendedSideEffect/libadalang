@@ -191,9 +191,9 @@ class Manage(ManageScript):
         ctx.add_with_clause('Analysis',
                             ADA_BODY, 'Libadalang.Lexer')
 
-        ctx.post_process_ada = copyright.format_ada
-        ctx.post_process_cpp = copyright.format_c
-        ctx.post_process_python = copyright.format_python
+        #ctx.post_process_ada = copyright.format_ada
+        #ctx.post_process_cpp = copyright.format_c
+        #ctx.post_process_python = copyright.format_python
 
         return ctx
 
