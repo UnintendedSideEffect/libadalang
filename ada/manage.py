@@ -14,7 +14,7 @@ from env import setenv
 setenv()
 
 
-import copyright
+#import copyright
 
 from langkit.diagnostics import check_source_language
 from langkit.libmanage import ManageScript
